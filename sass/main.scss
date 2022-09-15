@@ -1,12 +1,15 @@
 @import './variables';
 @import './config';
 @import './ui/navbar';
-
+@import './ui/title';
+@import './input';
+@import './pages/login';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=VT323&display=swap');
 
 body{
     min-height: 100vh;
     width: 100%;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     color: $text-color;
     scroll-behavior: smooth;

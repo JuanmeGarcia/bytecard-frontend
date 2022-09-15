@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { Input } from '../components/Input'
 import { useForm } from '../hooks'
-import { Navbar } from '../ui'
+import { Navbar, Title, Text } from '../ui'
 
 const data = {
   email: '',
@@ -28,12 +29,50 @@ const Login: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Navbar/>
-        <main>
-          <h1>Login Page</h1>
-          <p>Tu Money by the Face con ByteCard La tarjeta que mordera el mercado y sera un E-XI-TA-ZO Preparense para lo que se viene! UwU</p>
-          <input type="text" placeholder="Email" value={formData.email} onChange={onChangeEvent} name={'email'}/>
-          <input type="password" placeholder="Password" value={formData.password} onChange={onChangeEvent} name={'password'}/>
-          <input type="submit" value="login" onClick={onSubmit}/>
+        <main className='login'>
+          <div
+            className='login-title'
+          >
+          <Title
+            type='h1'
+          >
+            Tu Money by the Face con <span className='color-primary mono-font byte'>ByteCard</span>
+          </Title>
+          <Title
+            type='h3'
+          >
+            La tarjeta que mordera el mercado y sera un E-XI-TA-ZO 
+            Preparense para lo que se viene! <span className='color-primary mono-font uwu'>UwU</span>   
+          </Title>
+          </div>
+
+          <form
+            className='login-form'
+          >
+            <div>
+              <Input
+                type='text'
+                value={formData.email}
+                name='email'
+                placeholder='Email'
+              />
+              <Input 
+                type='text'
+                value={formData.password}
+                name='password'
+                placeholder='password'
+              />
+
+            </div>
+
+            <Input
+              type='submit'
+              value='Iniciar sesion'
+            />
+          </form>
+          <figure className='login-image'>
+            <img src="./mockup.png" alt="mockup" />
+          </figure>
         </main>
     </div>
   )

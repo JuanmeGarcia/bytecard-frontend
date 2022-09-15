@@ -1,0 +1,51 @@
+.input {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #fafafa;
+    font-size: 20px;
+    color: $background-color;
+
+    &::placeholder{
+        color: #b4b4b4;
+    }
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.button{
+    padding: .5rem 1rem;
+    color: white;
+    border: 3px solid $accent-color;
+    font-size: 20px;
+    position: relative;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: $background-color;
+    letter-spacing: 1px;
+
+    &:hover{
+        background-color: $accent-color;
+        color: $background-color;
+    }
+
+    &:hover::before{
+        transform: translateX(100%) rotate(45deg);
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        background-color: white;
+        width: 100px;
+        height: 25px;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%)  rotate(45deg);
+        @include transition-ease;
+    }
+}

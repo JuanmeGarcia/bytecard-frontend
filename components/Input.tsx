@@ -9,12 +9,20 @@ interface Props{
 }
 
 export const Input: FC<Props> = ({type, value, name, placeholder}) => {
-    return (
-        <input 
-            type={type} 
-            value={value} 
-            name={name}  
-            placeholder={placeholder}
-        />
-    )
+    return type === 'text' 
+        ? <input 
+                type={type} 
+                value={value} 
+                name={name}  
+                placeholder={placeholder}
+                className='input'
+            />
+        : <input 
+                type={type} 
+                value={value} 
+                name={name}  
+                placeholder={placeholder}
+                className='button'
+            />
+    
 }

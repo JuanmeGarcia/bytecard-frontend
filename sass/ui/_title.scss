@@ -1,0 +1,25 @@
+.title{
+    font-weight: bold;
+
+    &--big{
+        font-size: clamp(28px, 5vw, 44px);
+    }
+    &--medium {
+        font-size: clamp(24px, 3vw, 32px);
+    }
+    &--small{
+        font-size: clamp(20px, 2vw, 28px);
+    }
+}
+
+.byte{
+    font-size: clamp(32px, 5.5vw, 48px);
+}
+
+.uwu{
+    font-size: clamp(24px, 2.5vw, 32px);
+}
+
+.mono-font{
+    font-family: 'VT323', monospace;
+}

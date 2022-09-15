@@ -65,6 +65,13 @@ select {
     }
 }
 
+.color-primary{
+    color: $accent-color;
+}
+.color-text{
+    color: $text-color;
+}
+
 
 @mixin transition-ease {
     transition: all 500ms ease-in-out;
