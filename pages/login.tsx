@@ -1,24 +1,20 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Input } from '../components/Input'
+import { useFormContext } from '../context/useFormContext'
 import { useForm } from '../hooks'
 import { Navbar, Title, Text } from '../ui'
 
-const data = {
-  email: '',
-  password: '',
-} 
+
 
 const Login: NextPage = () => {
 
-  const { formData, onChangeEvent } = useForm(data)
-
-  console.log(formData);
-  
+  const { formData } = useFormContext()
 
   const onSubmit = (e: any) => {
     e.preventDefault()
-    console.log({formData})
+    console.log(formData)
+    
   }
 
   return (
@@ -48,6 +44,7 @@ const Login: NextPage = () => {
 
           <form
             className='login-form'
+            onSubmit={onSubmit}
           >
             <div>
               <Input

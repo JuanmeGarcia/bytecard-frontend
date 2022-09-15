@@ -1,4 +1,5 @@
 import { FC } from "react"
+import { useFormContext } from "../context/useFormContext"
 import { inputType } from "../types"
 
 interface Props{
@@ -9,6 +10,9 @@ interface Props{
 }
 
 export const Input: FC<Props> = ({type, value, name, placeholder}) => {
+
+    const { onChangeEvent } = useFormContext() 
+
     return type === 'text' 
         ? <input 
                 type={type} 
@@ -16,6 +20,7 @@ export const Input: FC<Props> = ({type, value, name, placeholder}) => {
                 name={name}  
                 placeholder={placeholder}
                 className='input'
+                onChange={onChangeEvent}
             />
         : <input 
                 type={type} 
@@ -23,6 +28,7 @@ export const Input: FC<Props> = ({type, value, name, placeholder}) => {
                 name={name}  
                 placeholder={placeholder}
                 className='button'
+                onChange={onChangeEvent}
             />
     
 }
